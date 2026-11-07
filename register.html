@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e3b33">
+  <title>Create an account · VenueBook</title>
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+  <main class="auth-shell">
+    <section class="auth-story" aria-label="VenueBook">
+      <a class="auth-brand" href="index.html"><span class="auth-brand-mark">VenueBook</span></a>
+      <div>
+        <p class="auth-kicker">Make room for good work</p>
+        <h1>Bring your best ideas together.</h1>
+        <p class="auth-story-copy">A great space can change the way a team thinks. Find yours and make the time count.</p>
+      </div>
+      <p class="auth-story-foot">Find your place · Make it happen</p>
+    </section>
+    <section class="auth-content">
+      <form id="f" class="auth-form">
+        <p class="auth-eyebrow">Get started</p>
+        <h2>Create account</h2>
+        <p class="auth-intro">Join your campus and find your next space.</p>
+        <div class="auth-fields">
+          <input name="username" placeholder="Username" autocomplete="username" aria-label="Username" required>
+          <input name="email" type="email" placeholder="Email" autocomplete="email" aria-label="Email" required>
+          <input name="password" type="password" placeholder="Password (min 8 characters)" autocomplete="new-password" aria-label="Password (minimum 8 characters)" required>
+          <select name="role" id="role" aria-label="Account type">
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+          </select>
+          <input name="facultyCode" id="facultyCode" placeholder="Faculty code" aria-label="Faculty code" style="display:none">
+          <button type="submit">Create account</button>
+        </div>
+        <div id="msg" class="auth-message" role="status" aria-live="polite"></div>
+        <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    // Show the faculty code box only when "Faculty" is selected
+    document.getElementById('role').addEventListener('change', function () {
+      document.getElementById('facultyCode').style.display =
+        this.value === 'faculty' ? 'block' : 'none';
+    });
+
+    // When the form is submitted, send the details to the server
+    document.getElementById('f').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const body = Object.fromEntries(new FormData(e.target));
+      const msg = document.getElementById('msg');
+      const button = e.target.querySelector('button[type="submit"]');
+      button.disabled = true;
+      msg.textContent = '';
+      try {
+        const r = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        const data = await r.json().catch(() => null);
+        if (!r.ok) throw new Error(data?.error || `Registration failed (server returned ${r.status}).`);
+        msg.style.color = 'green';
+        msg.textContent = 'Account created! Going to login...';
+        setTimeout(() => { location.href = 'login.html'; }, 1200);
+      } catch (err) {
+        msg.style.color = 'red';
+        msg.textContent = err.message || 'Could not reach the server. Please try again.';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

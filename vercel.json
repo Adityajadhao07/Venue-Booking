@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "express",
+  "installCommand": "npm install",
+  "functions": {
+    "server.js": {
+      "includeFiles": "{venues.json,venues.db,schema.sql,node_modules/sql.js/dist/sql-wasm.wasm}",
+      "maxDuration": 60
+    }
+  }
+}

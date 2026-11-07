@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Review and manage room booking requests.">
+  <title>Booking approvals · Venue Booking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Schibsted+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="brand" href="admin.html">Venue Booking</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Venues</a>
+        <a href="bookings.html">My bookings</a>
+        <a href="admin.html" aria-current="page">Approvals</a>
+        <button class="btn small ghost" type="button" id="logout">Log out</button>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap admin-wrap">
+    <div class="page-head admin-heading">
+      <div><p class="admin-kicker">Administrator workspace</p><h1>Booking approvals</h1></div>
+      <p>Review room requests, make a decision, and keep students up to date.</p>
+    </div>
+
+    <section class="admin-metrics" id="metrics" aria-label="Booking overview" aria-live="polite"></section>
+    <section class="admin-section" aria-labelledby="pendingHeading">
+      <div class="admin-section-head"><div><p class="admin-kicker">Needs a decision</p><h2 id="pendingHeading">Pending requests</h2></div><span class="queue-count" id="pendingCount">0</span></div>
+      <div class="admin-queue" id="pendingList" aria-live="polite"><div class="skeleton"></div></div>
+    </section>
+    <section class="admin-section history-section" aria-labelledby="historyHeading">
+      <div class="admin-section-head"><div><p class="admin-kicker">Recent decisions</p><h2 id="historyHeading">Review history</h2></div></div>
+      <div class="admin-queue" id="historyList" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

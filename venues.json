@@ -1,0 +1,410 @@
+[
+  {
+    "id": 1,
+    "name": "NC01",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 2,
+    "name": "NC02",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 3,
+    "name": "NC03",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 4,
+    "name": "NC04",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 5,
+    "name": "NC05",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 6,
+    "name": "NC06",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 7,
+    "name": "NC07",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 8,
+    "name": "NC08",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 9,
+    "name": "NC09",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 1,
+    "projector": 1
+  },
+  {
+    "id": 10,
+    "name": "NC10",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 1,
+    "projector": 1
+  },
+  {
+    "id": 11,
+    "name": "NC11",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 12,
+    "name": "NC12",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 13,
+    "name": "NC13",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 14,
+    "name": "NC14",
+    "capacity": 150,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 15,
+    "name": "NC15",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 16,
+    "name": "NC16",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 17,
+    "name": "NC17",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 18,
+    "name": "NC18",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 19,
+    "name": "NC19",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 20,
+    "name": "NC20",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 21,
+    "name": "NC21",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 22,
+    "name": "NC22",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 23,
+    "name": "NC23",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 24,
+    "name": "NC24",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 25,
+    "name": "NC25",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 1
+  },
+  {
+    "id": 26,
+    "name": "NC26",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 1,
+    "projector": 1
+  },
+  {
+    "id": 27,
+    "name": "NC27",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 1,
+    "projector": 1
+  },
+  {
+    "id": 28,
+    "name": "NC28",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 1,
+    "projector": 1
+  },
+  {
+    "id": 29,
+    "name": "NC29",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 1,
+    "projector": 1
+  },
+  {
+    "id": 30,
+    "name": "NC30",
+    "capacity": 100,
+    "type": "Classroom",
+    "soundSystem": 1,
+    "projector": 1
+  },
+  {
+    "id": 31,
+    "name": "SC01",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 32,
+    "name": "SC02",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 33,
+    "name": "SC03",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 34,
+    "name": "SC04",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 35,
+    "name": "SC05",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 36,
+    "name": "SC06",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 37,
+    "name": "SC07",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 38,
+    "name": "SC08",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 39,
+    "name": "SC09",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 40,
+    "name": "SC10",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 41,
+    "name": "SC11",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 42,
+    "name": "SC12",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 43,
+    "name": "SC13",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 44,
+    "name": "SC14",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 45,
+    "name": "SC15",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 46,
+    "name": "SC16",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 47,
+    "name": "SC17",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 48,
+    "name": "SC18",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 49,
+    "name": "SC19",
+    "capacity": 50,
+    "type": "Classroom",
+    "soundSystem": 0,
+    "projector": 0
+  },
+  {
+    "id": 50,
+    "name": "Main Auditorium",
+    "capacity": 500,
+    "type": "Auditorium",
+    "soundSystem": 1,
+    "projector": 1
+  },
+  {
+    "id": 51,
+    "name": "Mini Auditorium",
+    "capacity": 200,
+    "type": "Auditorium",
+    "soundSystem": 1,
+    "projector": 1
+  }
+]

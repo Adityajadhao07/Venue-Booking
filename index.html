@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find a venue</title>
+  <meta name="description" content="Browse classrooms and auditoriums, check when they are free, and book one.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Schibsted+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="brand" href="index.html">Venue Booking</a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Venues</a>
+        <a href="bookings.html">My bookings</a>
+        <a href="admin.html" id="adminNav" hidden>Admin</a>
+        <button class="btn small ghost" type="button" onclick="logout()">Log out</button>
+      </nav>
+    </div>
+  </header>
+  <div class="demo-note" id="demoNote" hidden>Demo mode: the booking server is not reachable, so bookings are saved only in this browser.</div>
+
+  <main class="wrap">
+    <div class="page-head">
+      <h1>Find a room</h1>
+      <p>Bars show 8 am to 8 pm: red is approved and gold is awaiting review. Both times are held for the request.</p>
+    </div>
+
+    <div class="layout">
+      <details class="filters" id="filters" open>
+        <summary>Filters</summary>
+        <form class="filters-in" id="filterForm" autocomplete="off" onsubmit="return false">
+          <div class="field">
+            <label for="fDate">Date</label>
+            <input type="date" id="fDate">
+          </div>
+          <div class="field">
+            <label for="fQ">Room name</label>
+            <input type="search" id="fQ" placeholder="For example NC09">
+          </div>
+          <div class="field">
+            <label for="fType">Type</label>
+            <select id="fType"><option value="">All types</option></select>
+          </div>
+          <div class="field">
+            <label for="fCap">Seats needed</label>
+            <input type="number" id="fCap" min="1" inputmode="numeric" placeholder="Any">
+          </div>
+          <fieldset class="field">
+            <legend class="lbl">Free between</legend>
+            <div class="row2">
+              <select id="fFrom" aria-label="Free from"></select>
+              <select id="fTo" aria-label="Free until"></select>
+            </div>
+          </fieldset>
+          <fieldset class="field">
+            <legend class="lbl">Equipment</legend>
+            <label class="check"><input type="checkbox" id="fProj"> Projector</label>
+            <label class="check"><input type="checkbox" id="fSound"> Sound system</label>
+          </fieldset>
+          <button type="button" class="link-btn" id="fReset">Clear filters</button>
+        </form>
+      </details>
+
+      <section aria-live="polite">
+        <div class="bar">
+          <p class="count" id="count">Loading venues</p>
+          <label class="sort">Sort by
+            <select id="fSort">
+              <option value="name">Name</option>
+              <option value="cap-desc">Most seats</option>
+              <option value="cap-asc">Fewest seats</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid" id="grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <dialog class="sheet" id="sheet" aria-labelledby="sheetCode">
+    <div class="sheet-head">
+      <div>
+        <h2 class="code" id="sheetCode" style="font:700 56px/.9 var(--display)"></h2>
+        <p id="sheetMeta"></p>
+      </div>
+      <button class="icon-btn" id="sheetClose" aria-label="Close booking panel">&times;</button>
+    </div>
+    <div class="sheet-body">
+      <h2>Request this room</h2>
+      <p class="hint" id="sheetDate"></p>
+      <p class="approval-hint">Your request will reserve this time while an administrator reviews it. You can track the decision in My bookings.</p>
+      <div id="sheetRibbon"></div>
+      <p class="busy-list" id="busyList"></p>
+
+      <div class="form-error" id="formError" role="alert" hidden></div>
+      <form id="bookForm" novalidate>
+        <div class="row2">
+          <div class="field">
+            <label for="bStart">Starts</label>
+            <select id="bStart"></select>
+          </div>
+          <div class="field">
+            <label for="bEnd">Ends</label>
+            <select id="bEnd"></select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="bName">Your name</label>
+          <input type="text" id="bName" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="bEmail">Email</label>
+          <input type="email" id="bEmail" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="bAttendees">Number of people</label>
+          <input type="number" id="bAttendees" min="1" required inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="bPurpose">What is it for?</label>
+          <textarea id="bPurpose" required placeholder="Club meeting, guest lecture, exam"></textarea>
+        </div>
+        <button class="btn" type="submit" id="bSubmit">Send booking request</button>
+      </form>
+    </div>
+  </dialog>
+
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+    fetch('/api/me').then(function (r) {
+      if (!r.ok) location.href = 'login.html';
+      else return r.json();
+    }).then(function (user) {
+      if (user && user.role === 'admin') location.href = 'admin.html';
+      if (user && user.role === 'admin') document.getElementById('adminNav').hidden = false;
+    });
+
+    async function logout() {
+      await fetch('/api/logout', { method: 'POST' });
+      location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>
